@@ -23,6 +23,7 @@
       }
     </style>
 
+<!-- Pixel base -->
 <script>
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -32,18 +33,32 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '595539792179362');
-fbq('track', 'PageView');
+
+fbq('init', '595539792179362'); // Substitua pelo seu Pixel ID
+fbq('track', 'PageView'); // Rastreia visualização da página
 </script>
-<noscript><img height="1" width="1" style="display:none"
+
+<noscript>
+<img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=595539792179362&ev=PageView&noscript=1"
-/></noscript>
+/>
+</noscript>
+
+<!-- Valor do pedido (substitua dinamicamente) -->
+<div id="valorPedido" data-valor="97.00"></div> <!-- 299.90 é exemplo -->
+
+<!-- Evento Purchase -->
 <script>
+  // Pega o valor do pedido do HTML
+  var valorDoPedido = parseFloat(document.getElementById('valorPedido').dataset.valor);
+
+  // Envia evento Purchase com valor bruto e moeda
   fbq('track', 'Purchase', {
-    value: 97.00,
+    value: valorDoPedido,
     currency: 'BRL'
   });
 </script>
+
 
 </head>
 <body>
