@@ -39,7 +39,12 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 fbq('init', '595539792179362');
 fbq('track', 'PageView');
-fbq('track', 'ViewContent');
+</script>
+<script>
+  // dispara ViewContent após 15 segundos (15000 ms)
+  setTimeout(function() {
+    fbq('track', 'ViewContent');
+  }, 15000);
 </script>
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=595539792179362&ev=PageView&noscript=1"
